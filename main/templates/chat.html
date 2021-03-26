@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}GLA-CONNECT{% endblock title %}
+{% block head  %}
+<meta charset="utf-8">
+<link rel = "icon" href ="tit.png"type = "image/x-icon"> 
+<link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
+{% endblock head %}
+{% block style %}
+.fas{
+	color:white;
+	margin:0px;
+}
+.nav-brand{
+	margin:0px;
+}
+
+{% endblock style %}
+{% block script %}
+
+{% endblock script %}
+{% block nav %}
+<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+  <a class="navbar-brand _fnt_navhd" id="rmv_mob" href="#">GLA CONNECT</a>
+<!--   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button> -->
+  <!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
+   <!--  <ul class="navbar-nav"> -->
+      <!-- <li class="nav-item active"> -->
+
+        <a class="nav-link active" href="{% url 'home' %}"><i class="fas fa-home fa-lg"></i></a>
+
+      <!-- </li> -->
+      <!-- <li class="nav-item"> -->
+
+        <a class="nav-link" href="{% url 'search' %}"><i class="fas fa-search fa-lg"></i></a>
+      <!-- </li> -->
+      <!-- <li class="nav-item"> -->
+
+        <a class="nav-link" href="{% url 'notifications' %}"><i class="fas fa-bell fa-lg"></i></a>
+      <!-- </li> -->
+      <!-- li class="nav-item"> -->
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+        	<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user fa-lg"></i>
+        </a>
+         <div class="dropdown-menu dropdown-menu-right dropdown-default"
+          aria-labelledby="navbarDropdownMenuLink-333">
+          <a class="dropdown-item" href="#">Events</a>
+          <a class="dropdown-item" href="#">My Profile</a>
+          <a class="dropdown-item" href="#">Logout</a>
+        </div>
+    </li>
+</ul>
+       <!--  <a class="nav-link" href="#"><i class="fas fa-user fa-lg"></i></a> -->
+      <!-- </li> -->
+    <!-- </ul> -->
+ <!--  </div> -->
+</nav>
+{% endblock nav %}
+{% block content %}
+<div class="container">
+<h3 class="_fnt">Chat</h3>
+<hr>
+</div>
+{% endblock content %}
+{% block footer %}
+<hr class="_dwnhr">
+<p class="dwn_fnt"> &#169 Sameer Verma Productions | All Rights Reserverd.</p>
+<script type="text/javascript">
+	if(screen.width<760){
+		document.getElementById("rmv_mob").style.display="none";
+	}
+	if (window.innerWidth<760){
+		document.getElementById("rmv_mob").style.display="none";
+	}
+</script>
+{% endblock footer %}

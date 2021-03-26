@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}GLA-CONNECT{% endblock title %}
+{% block head  %}
+<meta charset="utf-8">
+<link rel = "icon" href ="tit.png"type = "image/x-icon"> 
+<link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
+{% endblock head %}
+{% block style %}
+.card-footer{
+  bottom:0;
+  position:absolute;
+  width:100%;
+}
+{% endblock style %}
+{% block nav %}
+<nav class="navbar navbar-expand-lg navbar-dark default-color">
+<!--  <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item avatar">
+        <a class="nav-link p-1" href="#">
+        	<img src="{% static '/images/logo.png' %}" align="center" class="rounded-circle z-depth-0"
+            alt="avatar image" height="35">
+        </a>
+      </li>
+    </ul> -->
+  <a class="navbar-brand _fnt_navhd" href="#">GLA CONNECT</a>
+
+</nav>
+{% endblock nav %}
+{% block content %}
+<div class="messages">
+{% for msg in messages %}
+
+<div class="alert alert-{{msg.level_tag}}" role="alert">
+{{msg.message}}
+</div>
+
+{%  endfor  %}
+</div>
+<div class="login">
+<form method="POST" action="{% url 'email_verify' %}">
+  {% csrf_token %}
+<input type="text" name="otp"id="otp_nam" placeholder="Enter OTP">
+<button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+{% endblock content %}
+{% block footer %}
+<div class="footer">
+  <div class="card-footer">
+<p class="dwn_fnt"> &#169 Copyright GLA-CONNECT || All Rights Reserverd.</p>
+</div>
+</div>
+{% endblock footer %}
